@@ -1,0 +1,31 @@
+{
+  "name": "projeto3",
+  "version": "1.0.0",
+  "description": "Projeto apresentado para avaliação no Módulo 2 do Curso de Programação da Blue.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fe-alves/projeto3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fe-alves/projeto3/issues"
+  },
+  "homepage": "https://github.com/fe-alves/projeto3#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.7.0"
+  }
+}

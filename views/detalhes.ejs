@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Corujão | Infos</title>
+</head>
+<body>
+    <article class="imagem">
+        <img src="./img/coruja.png" alt="Logo do Site" width="100px" height="100px">
+    </article>
+    <article>
+        <nav>
+            <ul class="menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/cadastro">Cadastro</a></li>
+                <li><a href="/catalogo">Catálogo</a></li>
+                <li><a href="#">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </article>
+    <section id="detalhes">
+        <div class="card">
+            <img src="<%= filme.imagem_filme %>">
+            <h1><%= filme.nome_filme %> </h1>
+            <h3><%= filme.ano_filme %> </h3>
+            <h3><%= filme.genero_filme %></h3>
+            <h3><%= filme.duracao_filme %></h3>
+            <h3><%= filme.diretor_filme %></h3>
+            <h2><%= filme.classificacao_filme %></h2>
+        </div>
+    </section>
+</body>
+</html>

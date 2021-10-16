@@ -1,0 +1,182 @@
+*{margin: 0; padding: 0;}
+
+body{
+    background-image: url(https://i.pinimg.com/originals/cd/e4/90/cde490c98a768bb1c459e23511393090.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.imagem{
+    display: flex;
+    justify-content: center;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+    
+}
+.menu{
+    list-style: none;
+    border: 1px solid #c0c0c0;
+    float: left;
+
+}
+.menu li{
+    position: relative;
+    float: left;
+    border-right: 1px solid #c0c0c0;
+}
+.menu li a{color:rgb(201, 201, 201); text-decoration:none; padding:5px 10px; display:block;}
+.menu li a:hover{
+    background:#333;
+    color:#fff;
+    -moz-box-shadow:0 3px 10px 0 #CCC;
+    -webkit-box-shadow:0 3px 10px 0 #ccc;
+    text-shadow:0px 0px 5px #fff;
+}
+.menu li  ul{
+    position:absolute;
+    top:25px;
+    left:0;
+    background-color:#fff;
+    display:none;
+}
+.menu li:hover ul, .menu li.over ul{display:block;}
+.menu li ul li{
+    border:1px solid #c0c0c0;
+    display:block;
+    width:150px;
+}
+section#catalogo{
+    margin-left: 10rem;
+    margin-right: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+section#detalhes{
+    margin-left: 10rem;
+    margin-right: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+a.card{
+    width: 20rem;
+    padding: 3rem;
+    box-shadow: 0 0 1rem #00000060;
+    margin: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.5s;
+    background-color: rgba(255, 255, 255, 0.342);
+    color: black;
+    text-decoration: none;
+}
+a.card h2{
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    color: black;
+}
+a.card h4{
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+div.card{
+    width: 20rem;
+    padding: 3rem;
+    box-shadow: 0 0 1rem #00000060;
+    margin: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.5s;
+    background-color: rgba(255, 255, 255, 0.342);
+    color: black;
+    text-decoration: none;
+}
+section#cadastrar{
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.267);
+    margin: 0 20rem 10rem 20rem;
+    box-shadow: 0 0 1rem #00000060;
+    border-radius: 1rem;
+}
+section#cadastrar form{
+    width: 100%;
+    padding: 3rem;
+}
+section#cadastrar form div label{
+    font-size: 1.3rem;
+    color: #000000;
+}
+section#cadastrar form div input{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border: 0.1rem solid rgba(0, 0, 0, 0.301);
+    border-radius: 3px;
+}
+section#cadastrar form button{
+    border: 3px solid #000;
+    border-radius: 3px;
+    background-color: #ffff;
+    color: #000;
+    padding: 1rem;
+    font-size: 0.8vw;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    width: 40%;
+}
+section#message {
+    padding: 1.5rem;
+    background-color: rgb(197, 255, 214);
+    color: #004d04;
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  span#close {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  span#close:hover{
+    color: rgb(255, 0, 0);
+    transform: scale(1.5);
+  }

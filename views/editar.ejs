@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Corujão | Editar</title>
+</head>
+<body>
+    <article class="imagem">
+        <img src="./img/coruja.png" alt="" width="100px" height="100px">            
+    </article>
+    <article>
+        <nav>
+            <ul class="menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/catalogo">Catálogo</a></li>
+                <li><a href="#">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </article>
+    <section id="cadastrar">
+        <form action="/editar/<%= filme.id %>" method="POST"> 
+            <div>
+                <label for="nome_filme">Nome: </label>
+                <input type="text" name="nome_filme" id="nome" placeholder="Digite o nome do filme/série:" required>  
+            </div>
+            <div>
+                <label for="genero_filme">Gênero: </label>
+                <input type="text" name="genero_filme" id="genero" placeholder="Qual o gênero do filme/série?" required>  
+            </div>
+            <div>
+                <label for="imagem_filme">Postêr: </label>
+                <input type="text" name="imagem_filme" id="imagem" placeholder="Digite o link do postêr desejado: " required>
+            </div>
+            <div>
+                <label for="classificacao_filme">Classificação Indicativa</label>
+                <input type="text" name="classificacao_filme" id="classificacao" placeholder="A classificação indicativa é de:" required>  
+            </div>
+            <div>
+                <label for="duracao_filme">Duração do Filme/Série</label>
+                <input type="text" name="duracao_filme" id="duracao" placeholder="Duração:" required>  
+            </div>
+            <div>
+                <label for="ano_filme">Ano: </label>
+                <input type="text" name="ano_filme" id="ano" placeholder="Em que ano foi lançado?" required>  
+            </div>
+            <div>
+                <label for="diretor_filme">Direção: </label>
+                <input type="text" name="diretor_filme" id="direcao" placeholder="Dirigido por:" required>  
+            </div>
+            <button type="submit">Editar</button>
+        </form>
+    </section>
+    <script src="/js/script.js"></script>
+</body>
+</html>
