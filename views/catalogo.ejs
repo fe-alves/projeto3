@@ -23,10 +23,10 @@
     <section id="catalogo">
         <% filmes.forEach((item) => { %>
             <a class="card" href="/detalhes/<%= item.id %>">
-                <img src="<%= item.imagem_filme %>">
+                <img src="<%= item.imagem_filme %>"> 
             </a>
-            <a href = "/editar/<%= item.id %>">Editar</a>
-            <a href = "/deletar/<%= item.id %>">Deletar</a>
+            <li><a href = "/editar/<%= item.id %>">Editar</a></li>
+            <li><a href = "/deletar/<%= item.id %>">Deletar</a></li>
         <% }) %>
     </section>
     <script src="./js/script.js"></script>

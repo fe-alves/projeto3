@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Corujão | Deletar</title>
 </head>
 <body>
     <article class="imagem">
-        <img src="./img/coruja.png" alt="" width="100px" height="100px">            
+        <img src="/img/coruja.png" alt="" width="100px" height="100px">            
     </article>
     <article>
         <nav>
@@ -21,8 +21,8 @@
         </nav>
     </article>
     <section id="cadastrar">
-        <form action="/deletar/<%= filme.id %>" method="POST"> 
-            <button type="submit">Deletar</button>
+        <form action="/deletar/<%= filme.id %>" method="POST">
+            <button type="submit">Deletar <%= filme.nome_filme %></button>
         </form>
     </section>
     <script src="/js/script.js"></script>
