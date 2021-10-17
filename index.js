@@ -41,6 +41,42 @@ app.get("/cadastro", (req, res) => {
 app.post("/cadastro", async (req, res) => {
   const { nome_filme, genero_filme, imagem_filme, classificacao_filme, duracao_filme, ano_filme, diretor_filme } = req.body;
 
+  if (!nome_filme) {
+    res.render("cadastro", {
+      message: "Nome é obrigatório",
+    });
+  }
+
+  else if (!imagem_filme) {
+    res.render("cadastro", {
+      message: "Imagem é obrigatório",
+    });
+  }
+
+  else {
+    try {
+      const filme = await Filme.create({
+        nome_filme,
+        genero_filme,
+        imagem_filme,
+        classificacao_filme,
+        duracao_filme,
+        ano_filme,
+        diretor_filme,
+      });
+    } catch (err) {
+      console.log(err);
+
+      res.render("cadastro", {
+        message: "Ocorreu um erro ao cadastrar o Filme!",
+      });
+    }
+  }
+  message = "Filme/Série cadastrado(a)!"
+  res.redirect("/")
+});/*
+
+
   const filme = await Filme.create({
     nome_filme,
     genero_filme,
@@ -51,12 +87,13 @@ app.post("/cadastro", async (req, res) => {
     diretor_filme,
   });
 
-  message = "Filme/Série cadastrado(a)!"
-  res.redirect("/");
+  
   res.render("cadastro", {
     filme,
   });
-});
+  message = "Filme/Série cadastrado(a)!"
+  res.redirect("/");
+});*/
 
 app.get("/editar/:id", async (req, res) => {
   const filme = await Filme.findByPk(req.params.id);
@@ -80,12 +117,12 @@ app.post("/editar/:id", async (req, res) => {
   filme.diretor_filme = diretor_filme;
 
   const filmeEditado = await filme.save();
-  message = "Filme/Série editado(a)!"
-  res.redirect("/catalogo");
+
   res.render("editar", {
     filme: filmeEditado,
   });
-  
+    message = "Filme/Série editado(a)!"
+  res.redirect("/catalogo");
 })
 
 app.get("/deletar/:id", async (req, res) => {
