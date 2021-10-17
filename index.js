@@ -19,10 +19,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/catalogo", async (req, res) => {
+  setTimeout(() => {message = "";}, 1000)
   const filmes = await Filme.findAll();
 
   res.render("catalogo", {
-    filmes,
+    filmes, message
   });
 });
 
@@ -38,61 +39,34 @@ app.get("/cadastro", (req, res) => {
 }); 
 
 app.post("/cadastro", async (req, res) => {
-  setTimeout(() => {message = "";}, 1000);
   const { nome_filme, genero_filme, imagem_filme, classificacao_filme, duracao_filme, ano_filme, diretor_filme } = req.body;
 
-  if (!nome_filme) {
-    res.render("cadastro", {
-      message: "Nome é obrigatório",
-    });
-  }
+  const filme = await Filme.create({
+    nome_filme,
+    genero_filme,
+    imagem_filme,
+    classificacao_filme,
+    duracao_filme,
+    ano_filme,
+    diretor_filme,
+  });
 
-  else if (!imagem_filme) {
-    res.render("cadastro", {
-      message: "Imagem é obrigatória",
-    });
-  }
-
-  else {
-    try {
-      const filme = await Filme.create({
-      nome_filme,
-      genero_filme,
-      imagem_filme,
-      classificacao_filme,
-      duracao_filme,
-      ano_filme,
-      diretor_filme,
-    });
-    message = "Filme/Série cadastrado(a)!"
-    res.redirect("/");
-    } catch (err) {
-      console.log(err);
-
-      res.render("cadastro", {
-        message: "Ocorreu um erro ao cadastrar Filme/Série!",
-      });
-    }
-  }
+  message = "Filme/Série cadastrado(a)!"
+  res.redirect("/");
+  res.render("cadastro", {
+    filme,
+  });
 });
 
 app.get("/editar/:id", async (req, res) => {
-  setTimeout(() => {message = "";}, 1000);
   const filme = await Filme.findByPk(req.params.id);
 
-  if (!filme) {
-    res.render("editar", {
-      message: "Filme não encontrado!",
-    });
-  }
-
   res.render("editar", {
-    filme, message
+    filme,
   });
 });
 
 app.post("/editar/:id", async (req, res) => {
-  setTimeout(() => {message = "";}, 1000);
   const filme = await Filme.findByPk(req.params.id);
 
   const { nome_filme, genero_filme, imagem_filme, classificacao_filme, duracao_filme, ano_filme, diretor_filme } = req.body;
@@ -106,24 +80,16 @@ app.post("/editar/:id", async (req, res) => {
   filme.diretor_filme = diretor_filme;
 
   const filmeEditado = await filme.save();
-
-  res.redirect("/");
+  message = "Filme/Série editado(a)!"
+  res.redirect("/catalogo");
   res.render("editar", {
     filme: filmeEditado,
-    message: "Filme editado com sucesso!",
   });
-
+  
 })
 
 app.get("/deletar/:id", async (req, res) => {
-  setTimeout(() => {message = "";}, 1000);
   const filme = await Filme.findByPk(req.params.id);
-
-  if (!filme) {
-    res.render("deletar", {
-      message: "Filme não encontrado!",
-    });
-  }
 
   res.render("deletar", {
     filme,
@@ -134,18 +100,13 @@ app.post("/deletar/:id", async (req, res) => {
   setTimeout(() => {message = "";}, 1000);
   const filme = await Filme.findByPk(req.params.id);
 
-  if (!filme) {
-    res.render("deletar", {
-      message: "Filme não encontrado!",
-    });
-  }
-
   await filme.destroy();
-  
+
   res.render("deletar", {
-    message: `Filme ${filme.nome_filme} deletado com sucesso!`,
+    message: `Deletado com sucesso!`,
   });
-  res.redirect("/");
+  res.redirect("/catalogo");
+
 });
 
 /*
