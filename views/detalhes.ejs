@@ -22,7 +22,7 @@
     </article>
     <section id="details">      
         <div id="infos">
-            <img src="<%= filme.imagem_filme %>" height="400px">
+            <img src="<%= filme.imagem_filme %>" height="300px">
             <p><%= filme.nome_filme %></p>
             <div id="info-datail">
                 <div class='col'>
@@ -35,8 +35,10 @@
                 </div>
             </div>
             <h2>Classificação: <%= filme.classificacao_filme %></h2>
-            <a href = "/editar/<%= filme.id %>">Editar</a>
-            <a href = "/deletar/<%= filme.id %>">Deletar</a>
+            <button href = "/editar/<%= filme.id %>">Editar</button>
+            <button href = "/deletar/<%= filme.id %>">Deletar</button>
+            <a class="editarDeletar" href = "/editar/<%= filme.id %>">Editar</a>
+            <a class="editarDeletar" href = "/deletar/<%= filme.id %>">Deletar</a>
         </div>
     </section>
 </body>
