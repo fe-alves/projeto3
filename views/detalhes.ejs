@@ -24,19 +24,19 @@
         <div id="infos">
             <img src="<%= filme.imagem_filme %>" height="300px">
             <p><%= filme.nome_filme %></p>
+            <h2>Classificação: <%= filme.classificacao_filme %></h2>
             <div id="info-datail">
                 <div class='col'>
                     <h3><%= filme.duracao_filme %></h3>
                     <h3><%= filme.ano_filme %></h3>
+                    <button type="submit" href = "/editar/<%= filme.id %>">Editar</button>
                 </div>
                 <div class='col'>
                     <h3><%= filme.genero_filme %></h3>
                     <h3><%= filme.diretor_filme %></h3>
+                    <button type="submit" href = "/deletar/<%= filme.id %>">Deletar</button>
                 </div>
             </div>
-            <h2>Classificação: <%= filme.classificacao_filme %></h2>
-            <button href = "/editar/<%= filme.id %>">Editar</button>
-            <button href = "/deletar/<%= filme.id %>">Deletar</button>
             <a class="editarDeletar" href = "/editar/<%= filme.id %>">Editar</a>
             <a class="editarDeletar" href = "/deletar/<%= filme.id %>">Deletar</a>
         </div>
