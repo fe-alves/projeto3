@@ -17,22 +17,25 @@
                 <li><a href="/">Início</a></li>
                 <li><a href="/cadastro">Cadastro</a></li>
                 <li><a href="/catalogo">Catálogo</a></li>
-                <li><a href="#">Quem Somos</a></li>
             </ul>
         </nav>
     </article>
-    <section id="detalhes">
-        <div class="card">
-            <img src="<%= filme.imagem_filme %>" height="500px">
-            <h1><%= filme.nome_filme %> </h1>
-            <h3><%= filme.ano_filme %> </h3>
-            <h3><%= filme.genero_filme %></h3>
-            <h3><%= filme.duracao_filme %></h3>
-            <h3><%= filme.diretor_filme %></h3>
-            <h2><%= filme.classificacao_filme %></h2>
+    <section id="details">      
+        <div id="infos">
+            <p><%= filme.nome_filme %></p>
+            <div id="info-datail">
+                <div class='col'>
+                    <h3><%= filme.duracao_filme %></h3>
+                    <h3><%= filme.ano_filme %>/h3>
+                </div>
+                <div class='col'>
+                    <h3><%= filme.genero_filme %></h3>
+                    <h3><%= filme.diretor_filme %></h3>
+                </div>
+            </div>
+            <h2>Classificação: <%= filme.classificacao_filme %></h2>
             <a href = "/editar/<%= filme.id %>">Editar</a>
             <a href = "/deletar/<%= filme.id %>">Deletar</a>
-
         </div>
     </section>
 </body>
