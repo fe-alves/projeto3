@@ -20,26 +20,27 @@
             </ul>
         </nav>
     </article>
-    <section id="details">
-        <img src="<%= filme.imagem_filme %>" height="300px">     
+    <section id="details">  
         <div id="infos">
             
-            <h2><%= filme.nome_filme %></h2>
+            <p><%= filme.nome_filme %></p>
             
             <div id="info-datail">
                 <div class='col'>
                     <h3><%= filme.duracao_filme %></h3>
                     <h3><%= filme.ano_filme %></h3>
+                    <a class="editarDeletar" href = "/editar/<%= filme.id %>">Editar</a>
                 </div>
                 <div class='col'>
                     <h3><%= filme.genero_filme %></h3>
                     <h3><%= filme.diretor_filme %></h3>
+                    <a class="editarDeletar" href = "/deletar/<%= filme.id %>">Deletar</a>
                 </div>
             </div>
 
             <h2>Classificação: <%= filme.classificacao_filme %></h2>
-            <a class="editarDeletar" href = "/editar/<%= filme.id %>">Editar</a>
-            <a class="editarDeletar" href = "/deletar/<%= filme.id %>">Deletar</a>
+            
+            
         </div>
     </section>
 </body>
